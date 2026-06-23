@@ -3,384 +3,287 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>NapoliPizza İtalyan — Pizza Restaurant</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<title>Napoli Pizza — Otantik İtalyan Pizzeria</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#3a0a00;--accent:#ff7043;--font:'Oswald',sans-serif;}
+:root{--red:#c0392b;--dark-red:#922b21;--yellow:#f1c40f;--bg:#0d0d0d;--bg2:#1a0a0a;--card:#1e0e0e;--cream:#fff8f0;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:#f0f0f0;font-family:var(--font);overflow-x:hidden;padding-bottom:72px;}
+body{background:var(--bg);color:var(--cream);font-family:'Lato',sans-serif;overflow-x:hidden;}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);padding:16px 6%;display:flex;align-items:center;justify-content:space-between;transition:.3s;}
-.logo{font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.02em;}.logo span{color:var(--accent);}
-nav ul{list-style:none;display:flex;gap:32px;}.nav-link{color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}.nav-link:hover{color:var(--accent);}
-.nav-cta{background:var(--accent);color:#000;padding:9px 22px;border-radius:50px;font-weight:700;font-size:13px;text-decoration:none;transition:opacity .2s;}.nav-cta:hover{opacity:.85;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,0,0,0.95);border-bottom:3px solid var(--red);padding:0 6%;height:68px;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:#fff;letter-spacing:.1em;text-transform:uppercase;}
+.logo span{color:var(--yellow);}
+nav ul{list-style:none;display:flex;gap:36px;}
+nav a{color:rgba(255,255,255,0.7);text-decoration:none;font-family:'Oswald',sans-serif;font-size:15px;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;}
+nav a:hover{color:var(--yellow);}
+.nav-order{background:var(--red);color:#fff;padding:10px 26px;font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;font-size:14px;transition:background .2s;}
+.nav-order:hover{background:var(--dark-red);}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:0 6%;}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80') center/cover no-repeat;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,.3) 100%);}
-.hero-content{position:relative;z-index:2;max-width:680px;animation:heroIn .8s ease both;}
-@keyframes heroIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
-.eyebrow::before{content:'';width:30px;height:2px;background:var(--accent);}
-h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;line-height:1.1;margin-bottom:24px;color:#fff;}
-h1 em{font-style:italic;color:var(--accent);}
-.hero-sub{font-size:17px;color:rgba(255,255,255,0.75);line-height:1.7;margin-bottom:36px;max-width:520px;}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
-.btn-primary{background:var(--accent);color:#000;padding:15px 32px;border-radius:50px;font-weight:800;font-size:15px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,0,0,.2);}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3);}
-.btn-outline{border:2px solid rgba(255,255,255,.4);color:#fff;padding:13px 28px;border-radius:50px;font-weight:600;font-size:15px;text-decoration:none;transition:border-color .2s,color .2s;}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1400&q=80') center/cover;}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,0,0,.95) 40%,rgba(13,0,0,.5) 70%,rgba(13,0,0,.1) 100%);}
+.hero-content{position:relative;z-index:2;padding:0 6%;max-width:600px;}
+.neon-line{display:block;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--yellow);margin-bottom:20px;}
+.neon-line::before{content:'';display:inline-block;width:40px;height:1px;background:var(--yellow);vertical-align:middle;margin-right:12px;}
+h1{font-family:'Oswald',sans-serif;font-size:clamp(3.5rem,7vw,5.5rem);font-weight:700;line-height:.95;text-transform:uppercase;color:#fff;margin-bottom:8px;}
+h1 .fire{color:var(--red);}
+h1 .ital{font-style:italic;color:var(--yellow);}
+.hero-tagline{font-size:16px;color:rgba(255,255,255,0.6);margin:20px 0 36px;line-height:1.6;max-width:420px;}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-red{background:var(--red);color:#fff;padding:15px 36px;font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+.btn-red:hover{background:var(--dark-red);}
+.btn-ghost{border:2px solid rgba(255,255,255,.3);color:#fff;padding:13px 30px;font-family:'Oswald',sans-serif;font-size:16px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .2s;}
+.btn-ghost:hover{border-color:var(--yellow);color:var(--yellow);}
+.flame-badge{position:absolute;right:8%;bottom:15%;width:160px;height:160px;background:var(--red);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;box-shadow:0 0 40px rgba(192,57,43,.6);animation:pulse 2s ease infinite;}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.flame-badge .fb-num{font-family:'Oswald',sans-serif;font-size:2.8rem;font-weight:700;color:#fff;line-height:1;}
+.flame-badge .fb-lbl{font-family:'Oswald',sans-serif;font-size:10px;color:rgba(255,255,255,.7);letter-spacing:.1em;text-transform:uppercase;}
 
-/* STATS */
-.stats{background:var(--accent);padding:60px 6%;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;}
-@media(max-width:768px){.stats{grid-template-columns:repeat(2,1fr);padding:40px 5%;}}
-.stat-item{padding:16px;}
-.stat-num{font-size:clamp(2rem,5vw,3rem);font-weight:800;color:#000;line-height:1;margin-bottom:8px;}
-.stat-lbl{font-size:12px;color:rgba(0,0,0,.7);font-weight:600;text-transform:uppercase;letter-spacing:.06em;}
+.stripe{background:var(--red);padding:14px 6%;display:flex;justify-content:center;gap:60px;flex-wrap:wrap;}
+.stripe-item{font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:10px;}
+.stripe-item::before{content:'✦';color:var(--yellow);}
 
-/* SERVICES */
-.services{padding:90px 6%;background:color-mix(in srgb,var(--bg) 80%,#111);}
-.section-header{text-align:center;margin-bottom:60px;}
-.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
-.section-title{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;color:#fff;}
-.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;}
-.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:32px 24px;transition:border-color .25s,transform .25s;}
-.card:hover{border-color:var(--accent);transform:translateY(-4px);}
-.card-icon{font-size:28px;color:var(--accent);margin-bottom:16px;}
-.card h3{font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;}
-.card p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;}
+.menu{padding:90px 6%;}
+.menu-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;}
+.section-label{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.25em;color:var(--red);text-transform:uppercase;margin-bottom:8px;}
+.section-title{font-family:'Oswald',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;text-transform:uppercase;color:#fff;}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.menu-item{position:relative;overflow:hidden;aspect-ratio:4/3;}
+.menu-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.menu-item:hover img{transform:scale(1.08);}
+.menu-item-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8) 0%,rgba(0,0,0,0) 60%);}
+.menu-item-info{position:absolute;bottom:0;left:0;right:0;padding:20px;}
+.menu-item-info h3{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:#fff;}
+.menu-item-info .price{font-family:'Oswald',sans-serif;font-size:20px;color:var(--yellow);margin-top:4px;}
 
-/* REVIEWS */
-.reviews{padding:90px 6%;background:var(--bg);}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
-@media(max-width:900px){.reviews-grid{grid-template-columns:1fr;}}
-.review-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px 24px;}
-.review-stars{font-size:18px;color:#f59e0b;margin-bottom:14px;}
-.review-text{font-size:14.5px;line-height:1.7;color:rgba(255,255,255,.8);font-style:italic;margin-bottom:16px;}
-.review-author{font-size:13px;font-weight:700;color:var(--accent);}
+.stats-red{background:var(--dark-red);padding:60px 6%;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;}
+.sr-item{padding:20px;border-right:1px solid rgba(255,255,255,.1);}
+.sr-item:last-child{border:none;}
+.sr-num{font-family:'Oswald',sans-serif;font-size:3.5rem;font-weight:700;color:var(--yellow);line-height:1;}
+.sr-lbl{font-size:12px;font-family:'Oswald',sans-serif;color:rgba(255,255,255,.6);letter-spacing:.1em;text-transform:uppercase;margin-top:6px;}
 
-/* FAQ */
-.faq-section{padding:90px 6%;max-width:800px;margin:0 auto;}
-.faq-item{border-bottom:1px solid rgba(255,255,255,.1);overflow:hidden;}
-.faq-q{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:15.5px;font-weight:600;color:#fff;cursor:pointer;text-align:left;gap:12px;-webkit-tap-highlight-color:transparent;font-family:var(--font);}
-.faq-q svg{flex-shrink:0;transition:transform .25s;color:var(--accent);}
-.faq-q.open svg{transform:rotate(180deg);}
-.faq-a{font-size:14.5px;color:rgba(255,255,255,.6);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s;}
-.faq-a.open{max-height:200px;padding-bottom:18px;}
+.hakkimizda{padding:90px 6%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.hk-img{position:relative;}
+.hk-img img{width:100%;height:420px;object-fit:cover;}
+.hk-img::after{content:'SINCE 1998';position:absolute;bottom:-20px;right:-20px;background:var(--yellow);color:#000;font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;padding:20px 28px;letter-spacing:.1em;}
+.hk-text h2{font-family:'Oswald',sans-serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:20px;}
+.hk-text h2 span{color:var(--red);}
+.hk-text p{color:rgba(255,255,255,.6);font-size:15px;line-height:1.8;margin-bottom:16px;}
+.hk-feat{display:flex;flex-direction:column;gap:12px;margin-top:24px;}
+.hk-feat-item{display:flex;align-items:center;gap:14px;font-size:14px;color:rgba(255,255,255,.75);}
+.hk-feat-item::before{content:'';width:8px;height:8px;background:var(--yellow);border-radius:50%;flex-shrink:0;}
 
-/* CTA */
-.cta{background:var(--accent);padding:90px 6%;text-align:center;}
-.cta-title{font-size:clamp(1.5rem,4.5vw,2.4rem);font-weight:800;color:#000;margin-bottom:16px;}
-.cta-desc{font-size:16px;color:rgba(0,0,0,.7);margin-bottom:32px;max-width:540px;margin-left:auto;margin-right:auto;line-height:1.6;}
-.cta-btn{display:inline-block;background:#000;color:var(--accent);font-weight:800;font-size:15px;padding:16px 38px;border-radius:50px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,0,0,.2);}
-.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3);}
+.reviews{padding:90px 6%;background:var(--bg2);}
+.r-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+.r-card{background:var(--card);border:1px solid rgba(192,57,43,.2);padding:28px;position:relative;}
+.r-card::before{content:'"';position:absolute;top:12px;left:20px;font-family:'Oswald',sans-serif;font-size:60px;color:rgba(192,57,43,.2);line-height:1;}
+.r-stars{color:var(--yellow);font-size:16px;margin-bottom:14px;}
+.r-text{font-size:14px;color:rgba(255,255,255,.65);line-height:1.75;font-style:italic;margin-bottom:16px;}
+.r-name{font-family:'Oswald',sans-serif;font-size:14px;color:var(--red);letter-spacing:.08em;text-transform:uppercase;}
 
-/* FOOTER */
-footer{background:#000;padding:40px 6%;text-align:center;border-top:1px solid rgba(255,255,255,.07);}
-.footer-logo{font-size:20px;font-weight:800;color:#fff;margin-bottom:10px;}.footer-logo span{color:var(--accent);}
-footer p{font-size:13px;color:rgba(255,255,255,.35);}
+.faq{padding:90px 6%;}
+.faq-wrap{max-width:780px;margin:48px auto 0;}
+.fi{border-bottom:1px solid rgba(192,57,43,.2);}
+.fq{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;color:#fff;cursor:pointer;letter-spacing:.05em;text-align:left;gap:12px;}
+.fq .ico{color:var(--red);font-size:22px;transition:transform .2s;flex-shrink:0;}
+.fq.open .ico{transform:rotate(45deg);}
+.fa{font-size:14px;color:rgba(255,255,255,.55);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s;}
+.fa.open{max-height:160px;padding-bottom:16px;}
 
-/* ANIMATIONS */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s;}
+.cta-pizza{background:var(--red);padding:70px 6%;text-align:center;}
+.cta-pizza h2{font-family:'Oswald',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:12px;}
+.cta-pizza p{color:rgba(255,255,255,.75);font-size:16px;margin-bottom:32px;}
+.btn-yellow{background:var(--yellow);color:#000;padding:16px 44px;font-family:'Oswald',sans-serif;font-size:17px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:opacity .2s;}
+.btn-yellow:hover{opacity:.85;}
+
+.contact{padding:90px 6%;}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:960px;margin:48px auto 0;}
+.ci h3{font-family:'Oswald',sans-serif;font-size:22px;color:var(--yellow);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;}
+.ci p{font-size:14px;color:rgba(255,255,255,.55);line-height:2.4;}
+.ci strong{color:#fff;}
+input,textarea{width:100%;background:var(--card);border:1px solid rgba(192,57,43,.25);color:#fff;padding:14px 16px;font-family:'Lato',sans-serif;font-size:14px;margin-bottom:12px;outline:none;transition:border-color .2s;}
+input:focus,textarea:focus{border-color:var(--red);}
+textarea{height:100px;resize:vertical;}
+button[type=submit]{width:100%;background:var(--red);color:#fff;border:none;padding:15px;font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+button[type=submit]:hover{background:var(--dark-red);}
+
+footer{background:#000;border-top:3px solid var(--red);padding:28px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.fl{font-family:'Oswald',sans-serif;font-size:20px;color:#fff;}
+.fl span{color:var(--yellow);}
+footer p{font-size:12px;color:rgba(255,255,255,.3);}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s;}
 .reveal.visible{opacity:1;transform:none;}
 
-/* CONTACT */
-#iletisim{padding:90px 6%;background:color-mix(in srgb,var(--bg) 90%,#111);}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:900px;margin:0 auto;}
-@media(max-width:768px){.contact-grid{grid-template-columns:1fr;}}
-.contact-info h3{font-size:20px;font-weight:700;color:#fff;margin-bottom:20px;}
-.contact-info p{color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:12px;font-size:15px;}
-.contact-info strong{color:var(--accent);}
-.contact-form input,.contact-form textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 16px;color:#fff;font-size:15px;font-family:var(--font);margin-bottom:14px;outline:none;transition:border-color .2s;}
-.contact-form input:focus,.contact-form textarea:focus{border-color:var(--accent);}
-.contact-form textarea{height:120px;resize:vertical;}
-.contact-form button{width:100%;background:var(--accent);color:#000;border:none;padding:15px;border-radius:10px;font-weight:800;font-size:15px;cursor:pointer;font-family:var(--font);transition:opacity .2s;}.contact-form button:hover{opacity:.85;}
-</style>
-
-<style>
 @media(max-width:768px){
-  .menu-btn,.hamburger,.nav-toggle,nav button{display:none!important;visibility:hidden!important;}
-  nav ul,nav>ul{display:none!important;}
-  nav,#nav{padding:10px 5%!important;min-height:unset!important;height:auto!important;}
-  body{padding-bottom:72px!important;}
-  h1{font-size:clamp(1.7rem,7.5vw,3rem)!important;line-height:1.15!important;}
-  h2{font-size:clamp(1.3rem,6vw,2rem)!important;}
-  section{padding:56px 5%!important;}
-  [class*="grid"]{grid-template-columns:1fr!important;}
-  input,textarea,select{font-size:16px!important;}
-  img{max-width:100%;height:auto;}
+  .menu-grid{grid-template-columns:1fr 1fr;}
+  .stats-red,.hakkimizda{grid-template-columns:1fr;}
+  .r-grid,.cg{grid-template-columns:1fr;}
+  .flame-badge{display:none;}
+  h1{font-size:2.8rem!important;}
+  body{padding-bottom:60px;}
+  nav ul,.nav-order{display:none;}
 }
-@media(min-width:769px){.mobile-bottom-nav{display:none!important;}}
-nav.mobile-bottom-nav,.mobile-bottom-nav{
-  top:auto!important;bottom:0!important;left:0!important;right:0!important;
-  position:fixed!important;height:64px!important;z-index:99999!important;
-  padding:0 2px!important;border-bottom:none!important;
-  border-top:1px solid rgba(255,255,255,0.1)!important;
-  background:rgba(8,8,8,0.97)!important;backdrop-filter:blur(20px)!important;
-  -webkit-backdrop-filter:blur(20px)!important;
-  box-shadow:0 -6px 28px rgba(0,0,0,0.45)!important;
-}
-@media(max-width:768px){.mobile-bottom-nav{display:flex!important;align-items:stretch!important;justify-content:space-around!important;}}
-.mob-nav-item{flex:1!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;text-decoration:none!important;color:rgba(255,255,255,0.42)!important;font-size:9px!important;font-weight:700!important;letter-spacing:0.05em!important;text-transform:uppercase!important;transition:color .18s!important;padding:6px 2px!important;position:relative!important;-webkit-tap-highlight-color:transparent!important;}
-.mob-nav-item.active{color:#fff!important;}
-.mob-nav-item svg{width:22px!important;height:22px!important;stroke:currentColor!important;fill:none!important;stroke-width:1.7!important;stroke-linecap:round!important;stroke-linejoin:round!important;}
-.mob-nav-item.active::after{content:'';position:absolute;bottom:5px;width:18px;height:2.5px;border-radius:2px;background:currentColor;}
+.mnav{display:none;position:fixed;bottom:0;left:0;right:0;height:60px;background:rgba(13,0,0,.97);border-top:3px solid var(--red);z-index:9999;align-items:stretch;justify-content:space-around;}
+@media(max-width:768px){.mnav{display:flex!important;}}
+.mi{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-decoration:none;color:rgba(255,255,255,.4);font-family:'Oswald',sans-serif;font-size:9px;letter-spacing:.08em;text-transform:uppercase;-webkit-tap-highlight-color:transparent;transition:color .2s;}
+.mi.active,.mi:hover{color:var(--yellow);}
+.mi svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
 </style>
 </head>
 <body>
-
-<nav id="nav">
-  <div class="logo">NapoliPizza<span>.</span></div>
+<nav>
+  <div class="logo">Napoli<span>🍕</span>Pizza</div>
   <ul>
-    <li><a href="#hizmetler" class="nav-link">Hizmetler</a></li>
-    <li><a href="#yorumlar" class="nav-link">Yorumlar</a></li>
-    <li><a href="#sss" class="nav-link">SSS</a></li>
-    <li><a href="#iletisim" class="nav-link">İletişim</a></li>
+    <li><a href="#menu">Menü</a></li>
+    <li><a href="#hakkimizda">Hikayemiz</a></li>
+    <li><a href="#reviews">Yorumlar</a></li>
+    <li><a href="#contact">İletişim</a></li>
   </ul>
-  <a href="#iletisim" class="nav-cta">İletişim</a>
+  <a href="#contact" class="nav-order">Sipariş Ver</a>
 </nav>
 
-<header class="hero">
+<section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
+  <div class="hero-ov"></div>
   <div class="hero-content">
-    <div class="eyebrow">Pizza Restaurant</div>
-    <h1>NapoliPizza İtalyan ile <em>fark yaratın.</em></h1>
-    <p class="hero-sub">Odun ateşinde pişen otantik Napoliten pizza.</p>
-    <div class="hero-btns">
-      <a href="#iletisim" class="btn-primary">Hemen Sipariş</a>
-      <a href="#hizmetler" class="btn-outline">Hizmetlerimiz</a>
+    <span class="neon-line">Gerçek İtalyan Pizzası</span>
+    <h1><span class="fire">Odun</span><br>Ateşinde<br><span class="ital">Pişen</span><br>Lezzet.</h1>
+    <p class="hero-tagline">500°C'de pişen Napoliten pizza, taze İtalyan malzemeleri ve 24 saat bekletilmiş hamur ile İstanbul'da.</p>
+    <div class="hero-cta">
+      <a href="#menu" class="btn-red">Menüyü İncele</a>
+      <a href="#contact" class="btn-ghost">Rezervasyon</a>
     </div>
   </div>
-</header>
-
-<section class="stats">
-
-        <div class="stat-item reveal">
-          <div class="stat-num">500+</div>
-          <div class="stat-lbl">Günlük Pizza</div>
-        </div>
-        <div class="stat-item reveal">
-          <div class="stat-num">8</div>
-          <div class="stat-lbl">Yıllık Lezzet</div>
-        </div>
-        <div class="stat-item reveal">
-          <div class="stat-num">25+</div>
-          <div class="stat-lbl">Pizza Çeşidi</div>
-        </div>
-        <div class="stat-item reveal">
-          <div class="stat-num">4.9</div>
-          <div class="stat-lbl">Değerlendirme</div>
-        </div>
-</section>
-
-<section class="services" id="hizmetler">
-  <div class="section-header">
-    <div class="section-eyebrow">Hizmetlerimiz</div>
-    <h2 class="section-title">Size Neler Sunuyoruz?</h2>
-  </div>
-  <div class="grid-4">
-
-        <div class="card reveal">
-          <div class="card-icon">◆</div>
-          <h3>Klasik Pizza</h3>
-          <p>Margherita, Napolitana, Quattro Stagioni.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">◆</div>
-          <h3>Özel Pizza</h3>
-          <p>Trüf mantarlı, karideslı ve premium malzemeli.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">◆</div>
-          <h3>İnce Hamur</h3>
-          <p>Geleneksel Napoliten ince el açması hamur.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">◆</div>
-          <h3>Teslimat</h3>
-          <p>30 dakika garantili sıcak pizza teslimatı.</p>
-        </div>
+  <div class="flame-badge">
+    <div class="fb-num">25+</div>
+    <div class="fb-lbl">Farklı<br>Pizza</div>
   </div>
 </section>
 
-<section class="reviews" id="yorumlar">
-  <div class="section-header">
-    <div class="section-eyebrow">Müşteri Yorumları</div>
-    <h2 class="section-title">Müşterilerimiz Ne Diyor?</h2>
-  </div>
-  <div class="reviews-grid">
+<div class="stripe">
+  <span class="stripe-item">Odun Fırını</span>
+  <span class="stripe-item">24h Mayalanma</span>
+  <span class="stripe-item">İtalyan Malzeme</span>
+  <span class="stripe-item">Ev Yapımı Sos</span>
+</div>
 
-        <div class="review-card reveal">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"İstanbul'un en iyi pizzası burada. Hamur mükemmel!"</p>
-          <div class="review-author">— Emre A.</div>
-        </div>
-        <div class="review-card reveal">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Odun fırını kokusu ambiyansı tamamlıyor. Harika mekan."</p>
-          <div class="review-author">— Selin K.</div>
-        </div>
-        <div class="review-card reveal">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Trüflü pizza denendi, inanılmaz lezzetli!"</p>
-          <div class="review-author">— Barış M.</div>
-        </div>
+<section class="menu" id="menu">
+  <div class="menu-head">
+    <div>
+      <div class="section-label">Lezzetlerimiz</div>
+      <h2 class="section-title">Öne Çıkan<br>Pizzalar</h2>
+    </div>
+  </div>
+  <div class="menu-grid reveal">
+    <div class="menu-item"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80" alt="Margherita"><div class="menu-item-ov"></div><div class="menu-item-info"><h3>Margherita</h3><div class="price">₺320</div></div></div>
+    <div class="menu-item"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="Pepperoni"><div class="menu-item-ov"></div><div class="menu-item-info"><h3>Pepperoni</h3><div class="price">₺380</div></div></div>
+    <div class="menu-item"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80" alt="4 Peynir"><div class="menu-item-ov"></div><div class="menu-item-info"><h3>Quattro Formaggi</h3><div class="price">₺420</div></div></div>
+    <div class="menu-item"><img src="https://images.unsplash.com/photo-1588315029754-2dd089d39a1a?w=600&q=80" alt="Truffle"><div class="menu-item-ov"></div><div class="menu-item-info"><h3>Tartufo Nero</h3><div class="price">₺520</div></div></div>
+    <div class="menu-item"><img src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=600&q=80" alt="Calzone"><div class="menu-item-ov"></div><div class="menu-item-info"><h3>Calzone</h3><div class="price">₺360</div></div></div>
+    <div class="menu-item"><img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=600&q=80" alt="Diavola"><div class="menu-item-ov"></div><div class="menu-item-info"><h3>Diavola</h3><div class="price">₺390</div></div></div>
   </div>
 </section>
 
-<section class="faq-section" id="sss">
-  <div class="section-header">
-    <div class="section-eyebrow">Sık Sorulan Sorular</div>
-    <h2 class="section-title">Merak Ettikleriniz</h2>
-  </div>
+<div class="stats-red">
+  <div class="sr-item reveal"><div class="sr-num" data-target="25">0</div><div class="sr-lbl">Pizza Çeşidi</div></div>
+  <div class="sr-item reveal"><div class="sr-num" data-target="500">0</div><div class="sr-lbl">°C Fırın Isısı</div></div>
+  <div class="sr-item reveal"><div class="sr-num" data-target="1998">0</div><div class="sr-lbl">Kuruluş Yılı</div></div>
+  <div class="sr-item reveal"><div class="sr-num" data-target="98">0</div><div class="sr-lbl">% Memnuniyet</div></div>
+</div>
 
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Vegan seçenek var mı?</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-a">Evet, vegan peynir ve sebzeli özel pizza yapıyoruz.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Teslimat saatleri neler?</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-a">12:00–23:30 arası teslimat hizmetimiz mevcuttur.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Toplu sipariş için indirim var mı?</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-a">10+ pizza siparişlerinde %15 indirim uygulanmaktadır.</div>
-        </div>
+<section class="hakkimizda" id="hakkimizda">
+  <div class="hk-img reveal">
+    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Pizza fırını">
+  </div>
+  <div class="hk-text reveal">
+    <div class="section-label">Hikayemiz</div>
+    <h2>Napoli'den <span>İstanbul'a</span> Gelen Lezzet</h2>
+    <p>1998'de Napoli'de pizza ustası olarak çalışmaya başladık. Geleneksel İtalyan tarifini mükemmelleştirerek İstanbul'a taşıdık.</p>
+    <p>Hamurumuz 24 saat özel mayalanır, sosumuz San Marzano domatesinden yapılır, fırınımız odun ateşiyle yanar.</p>
+    <div class="hk-feat">
+      <div class="hk-feat-item">Sertifikalı Napoliten pizza ustası</div>
+      <div class="hk-feat-item">İtalya'dan ithal malzemeler</div>
+      <div class="hk-feat-item">Geleneksel odun fırını</div>
+      <div class="hk-feat-item">Glutensiz hamur seçeneği</div>
+    </div>
+  </div>
 </section>
 
-<section class="cta">
-  <h2 class="cta-title">Pizza Sipariş Et</h2>
-  <p class="cta-desc">Odun ateşinde pişen otantik Napoliten pizza.</p>
-  <a href="#iletisim" class="cta-btn">Hemen Sipariş</a>
+<section class="reviews" id="reviews">
+  <div class="section-label">Müşteri Yorumları</div>
+  <h2 class="section-title reveal">Ne Dediler?</h2>
+  <div class="r-grid">
+    <div class="r-card reveal"><div class="r-stars">★★★★★</div><p class="r-text">"İstanbul'da yediğim en iyi pizza. Hamur tam kıvamında, sos harika. Artık haftalık rutinimiz."</p><div class="r-name">Ceren A.</div></div>
+    <div class="r-card reveal"><div class="r-stars">★★★★★</div><p class="r-text">"Napoli'ye gitmeden Napoli pizzası yemek istediyseniz adres bu. Tartufo pizzası çok farklı."</p><div class="r-name">Murat K.</div></div>
+    <div class="r-card reveal"><div class="r-stars">★★★★★</div><p class="r-text">"Odun ateşi kokusu ve kıtır kıtır kenar. Gerçek İtalyan pizzası bu işte. Bravo!"</p><div class="r-name">Selin T.</div></div>
+  </div>
 </section>
 
-<section id="iletisim">
-  <div class="section-header">
-    <div class="section-eyebrow">İletişim</div>
-    <h2 class="section-title">Bizimle İletişime Geçin</h2>
+<section class="faq" id="faq">
+  <div class="section-label">Sorular</div>
+  <h2 class="section-title reveal">Sık Sorulan Sorular</h2>
+  <div class="faq-wrap">
+    <div class="fi"><button class="fq" onclick="faq(this)"><span>Paket servis var mı?</span><span class="ico">+</span></button><div class="fa">Evet, 5 km çevre için ücretsiz, 5-10 km için 30 TL paket servisimiz mevcuttur.</div></div>
+    <div class="fi"><button class="fq" onclick="faq(this)"><span>Glutensiz seçenek sunuyor musunuz?</span><span class="ico">+</span></button><div class="fa">Evet, glutensiz hamur seçeneğimiz mevcuttur. Fiyata +60 TL eklenir.</div></div>
+    <div class="fi"><button class="fq" onclick="faq(this)"><span>Rezervasyon şart mı?</span><span class="ico">+</span></button><div class="fa">Hafta sonu akşamları için rezervasyon önerilir. Hafta içi ve öğle saatlerinde boş masa bulunur.</div></div>
   </div>
-  <div class="contact-grid">
-    <div class="contact-info reveal">
+</section>
+
+<section class="cta-pizza">
+  <h2>Masanızı Ayırtın</h2>
+  <p>Hafta sonu rezervasyonları dolmadan yerinizi alın.</p>
+  <a href="#contact" class="btn-yellow">Hemen Rezervasyon Yap</a>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-label" style="text-align:center">İletişim</div>
+  <h2 class="section-title" style="text-align:center;margin-bottom:0" >Bize Ulaşın</h2>
+  <div class="cg">
+    <div class="ci reveal">
       <h3>Bilgilerimiz</h3>
-      <p><strong>Firma:</strong> NapoliPizza İtalyan</p>
-      <p><strong>Sektör:</strong> Pizza Restaurant</p>
-      <p><strong>Telefon:</strong> 0850 XXX XX XX</p>
-      <p><strong>E-posta:</strong> info@pizza.com</p>
-      <p><strong>Adres:</strong> İstanbul, Türkiye</p>
+      <p><strong>Adres:</strong> Bağcılar Mah. Pizza Sokak No:12, İstanbul<br>
+      <strong>Telefon:</strong> 0212 XXX XX XX<br>
+      <strong>E-posta:</strong> info@napolipizza.com.tr<br>
+      <strong>Pazartesi — Pazar:</strong> 11:00 — 23:00</p>
     </div>
-    <div class="contact-form reveal">
+    <div class="reveal">
       <input type="text" placeholder="Adınız Soyadınız">
-      <input type="tel" placeholder="Telefon Numaranız">
-      <input type="email" placeholder="E-posta Adresiniz">
-      <textarea placeholder="Mesajınız..."></textarea>
-      <button type="submit">Gönder →</button>
+      <input type="tel" placeholder="Telefon">
+      <input type="text" placeholder="Kişi sayısı ve tarih">
+      <textarea placeholder="Not veya özel istek..."></textarea>
+      <button type="submit">Rezervasyon Talep Et 🍕</button>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-logo">NapoliPizza<span>.</span></div>
-  <p>© 2026 NapoliPizza İtalyan. Tüm hakları saklıdır.</p>
+  <div class="fl">Napoli<span>Pizza</span></div>
+  <p>© 2026 Napoli Pizza. Tüm hakları saklıdır.</p>
 </footer>
 
-<nav class="mobile-bottom-nav" id="mbn">
-  <a href="#hizmetler" class="mob-nav-item active"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Hizmetler</span></a>
-  <a href="#yorumlar" class="mob-nav-item"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Yorumlar</span></a>
-  <a href="#sss" class="mob-nav-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4m0 4h.01"/></svg><span>SSS</span></a>
-  <a href="#iletisim" class="mob-nav-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.05 2.18 2 2 0 012.04 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><span>İletişim</span></a>
+<nav class="mnav">
+  <a href="#menu" class="mi active"><svg viewBox="0 0 24 24"><path d="M3 3h18v13H3z"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>Menü</a>
+  <a href="#hakkimizda" class="mi"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>Hakkımızda</a>
+  <a href="#reviews" class="mi"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Yorum</a>
+  <a href="#contact" class="mi"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07A19.5 19.5 0 013 5.18 2 2 0 014.18 3h3a2 2 0 012 1.72c.128.96.361 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>İletişim</a>
 </nav>
 
 <script>
-// Scroll reveal
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); } });
-}, {threshold:0.12});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-// Nav scroll
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => { nav.style.background = scrollY > 60 ? 'rgba(0,0,0,0.98)' : 'rgba(0,0,0,0.92)'; }, {passive:true});
-
-// Mobile nav active
-(function(){
-  const items = document.querySelectorAll('.mob-nav-item');
-  const secs = [];
-  items.forEach(item => {
-    const h = item.getAttribute('href');
-    if(h && h.startsWith('#') && h.length > 1) {
-      const el = document.querySelector(h);
-      if(el) secs.push({item, el});
-    }
-    item.addEventListener('click', () => {
-      items.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-    });
-  });
-  if(secs.length) window.addEventListener('scroll', () => {
-    const sy = window.pageYOffset + 120;
-    let cur = secs[0];
-    secs.forEach(s => { if(s.el.offsetTop <= sy) cur = s; });
-    items.forEach(i => i.classList.remove('active'));
-    cur.item.classList.add('active');
-  }, {passive:true});
-})();
-
-// FAQ
-function toggleFaq(btn) {
-  const a = btn.parentElement.querySelector('.faq-a');
-  const open = btn.classList.contains('open');
-  document.querySelectorAll('.faq-q.open').forEach(b => {
-    b.classList.remove('open');
-    b.parentElement.querySelector('.faq-a').classList.remove('open');
-  });
-  if(!open) { btn.classList.add('open'); a.classList.add('open'); }
-}
-
-// Stats count-up
-(function(){
-  const stats = document.querySelectorAll('.stat-num');
-  let done = false;
-  const obs = new IntersectionObserver(entries => {
-    if(done) return;
-    entries.forEach(e => {
-      if(e.isIntersecting) {
-        done = true;
-        stats.forEach(el => {
-          const t = el.textContent;
-          const n = parseFloat(t.replace(/[^0-9.]/g,''));
-          const suf = t.replace(/[0-9.]/g,'');
-          if(isNaN(n)) return;
-          let start = null;
-          const step = ts => {
-            if(!start) start = ts;
-            const p = Math.min((ts-start)/1400,1);
-            const e2 = 1-Math.pow(1-p,3);
-            el.textContent = Math.round(e2*n*10)/10 + suf;
-            if(p<1) requestAnimationFrame(step);
-          };
-          requestAnimationFrame(step);
-        });
-        obs.disconnect();
-      }
-    });
-  }, {threshold:0.3});
-  const s = document.querySelector('.stats');
-  if(s) obs.observe(s);
-})();
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const o2=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){
+  document.querySelectorAll('[data-target]').forEach(el=>{
+    const t=+el.dataset.target;let s=null;
+    const step=ts=>{if(!s)s=ts;const p=Math.min((ts-s)/1500,1),v=Math.round((1-Math.pow(1-p,3))*t);
+    el.textContent=v;if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);});
+  o2.disconnect();}})},{threshold:.4});
+const sb=document.querySelector('.stats-red');if(sb)o2.observe(sb);
+document.querySelectorAll('.mi').forEach(m=>{m.addEventListener('click',()=>{document.querySelectorAll('.mi').forEach(x=>x.classList.remove('active'));m.classList.add('active');});});
+function faq(b){const a=b.nextElementSibling,o=b.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(x=>{x.classList.remove('open');x.nextElementSibling.classList.remove('open');});
+  if(!o){b.classList.add('open');a.classList.add('open');}}
 </script>
 </body>
 </html>
